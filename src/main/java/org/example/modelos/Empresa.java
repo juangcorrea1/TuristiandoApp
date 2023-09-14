@@ -2,27 +2,27 @@ package org.example.modelos;
 
 import org.example.validaciones.LocalValidacion;
 
-public class Local {
+public abstract class Empresa {
     private Integer id;
     private String nit;
     private String nombre;
     private Integer ubicacion;
     private String descripcion;
 
-    private Local local;
+    private Empresa empresa;
 
     private LocalValidacion validacion = new LocalValidacion();
 
-    public Local() {
+    public Empresa() {
     }
 
-    public Local(Integer id, String nit, String nombre, Integer ubicacion, String descripcion, Local local) {
+    public Empresa(Integer id, String nit, String nombre, Integer ubicacion, String descripcion, Empresa empresa) {
         this.id = id;
         this.nit = nit;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
         this.descripcion = descripcion;
-        this.local = local;
+        this.empresa = empresa;
     }
 
     public Integer getId() {
@@ -75,13 +75,15 @@ public class Local {
         this.descripcion = descripcion;
     }
 
-    public Local getLocal() {
-        return local;
+    public Empresa getLocal() {
+        return empresa;
     }
 
-    public void setLocal(Local local) {
-        this.local = local;
+    public void setLocal(Empresa empresa) {
+        this.empresa = empresa;
     }
+
+    public abstract Double cobrar();
 
 }
 

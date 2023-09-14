@@ -5,12 +5,12 @@ import org.example.utilidades.Util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
 public class OfertaValidacion {
 
     protected Util util = new Util();
+
     public boolean validarTitulo(String titulo) throws Exception {
         if (titulo.length() > 20) {
             throw new Exception(Mensaje.TITULO_OFERTA_INVALIDO.getMensaje());

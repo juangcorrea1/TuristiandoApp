@@ -2,10 +2,7 @@ package org.example.modelos;
 
 import org.example.validaciones.UsuarioValidacion;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-public class Usuario {
+public abstract class Usuario {
 
     //atributos
     private Integer id;
@@ -45,9 +42,9 @@ public class Usuario {
     }
 
     public void setDocumento(String documento) {
-        if (documento.length()<10){
+        if (documento.length() < 10) {
             System.out.println("Numero de caracteres invalido");
-        }else {
+        } else {
             this.documento = documento;
         }
     }
@@ -60,8 +57,8 @@ public class Usuario {
         try {
             this.valicacion.validarNombres(nombres);
             this.nombres = nombres;
-        }catch (Exception error){
-            System.out.println("\u001B[31m"+ error.getMessage() +"\u001B[31m");
+        } catch (Exception error) {
+            System.out.println("\u001B[31m" + error.getMessage() + "\u001B[31m");
         }
     }
 
@@ -73,8 +70,8 @@ public class Usuario {
         try {
             this.valicacion.validarCorreo(correo);
             this.correo = correo;
-        }catch (Exception error){
-            System.out.println("\u001B[31m"+ error.getMessage() +"\u001B[31m");
+        } catch (Exception error) {
+            System.out.println("\u001B[31m" + error.getMessage() + "\u001B[31m");
         }
     }
 
@@ -86,14 +83,18 @@ public class Usuario {
         try {
             this.valicacion.validarUbicacion(ubicacion);
             this.ubicacion = ubicacion;
-        }catch (Exception error){
-            System.out.println("\u001B[31m"+ error.getMessage() +"\u001B[31m");
+        } catch (Exception error) {
+            System.out.println("\u001B[31m" + error.getMessage() + "\u001B[31m");
         }
     }
 
     //metodos ordinarios
-    public String generarContraseña(){
+    public String generarContraseña() {
         return null;
     }
 
+    //como padre declaro que todos mis hijos deben:
+    //1. Registrase en plataforma.
+
+    public abstract Boolean registrar();
 }

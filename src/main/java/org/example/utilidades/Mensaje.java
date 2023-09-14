@@ -10,6 +10,8 @@ public enum Mensaje {
     FECHA_INICIO_MAYOR("La fecha de inicio no puede ser mayor que la fecha de fin"),
     FECHA_FORMATO_INVALIDO("Todas las fechas deben tener el formato (DD/MM/YYYY)"),
     COSTO_PERSONA_INVALIDO("El costo por persona no puede ser negativo"),
+
+    VALOR_INVALIDO("El Monto debe de ser positivo"),
     NUMERO_PERSONAS_INVALIDO("El número de personas por reserva no puede ser mayor a 4 personas"),
     FECHA_INVALIDA("La facha ingresada no es valida"),
     NIT_INVALIDO("El NIT de debe de tener solo 10 digitos");
